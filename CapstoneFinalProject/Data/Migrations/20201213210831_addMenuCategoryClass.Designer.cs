@@ -11,9 +11,10 @@ using System;
 namespace CapstoneFinalProject.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201213210831_addMenuCategoryClass")]
+    partial class addMenuCategoryClass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,16 +79,12 @@ namespace CapstoneFinalProject.Data.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<string>("MenuCategoryId");
-
                     b.Property<string>("Name")
                         .IsRequired();
 
                     b.Property<decimal>("Price");
 
                     b.HasKey("MenuId");
-
-                    b.HasIndex("MenuCategoryId");
 
                     b.ToTable("Menus");
                 });
@@ -210,13 +207,6 @@ namespace CapstoneFinalProject.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("CapstoneFinalProject.Models.Menu", b =>
-                {
-                    b.HasOne("CapstoneFinalProject.Models.MenuCategory", "Category")
-                        .WithMany()
-                        .HasForeignKey("MenuCategoryId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

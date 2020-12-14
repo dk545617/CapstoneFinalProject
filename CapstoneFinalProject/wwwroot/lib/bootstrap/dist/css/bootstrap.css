@@ -4968,6 +4968,9 @@ a.badge:focus {
     background-size: contain;
     height: 500px;
 }
+.jumbotron-btn {
+    background-color: #aa0000;
+}
     .jumbotron h1,
     .jumbotron .h1 {
         color: inherit;

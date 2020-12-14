@@ -15,6 +15,10 @@ namespace CapstoneFinalProject.Data
         {
         }
 
+        public DbSet<Menu> Menus { get; set; }
+        public DbSet<MenuCategory> MenuCategories { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
