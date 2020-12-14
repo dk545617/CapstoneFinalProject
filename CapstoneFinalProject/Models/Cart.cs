@@ -7,6 +7,7 @@ namespace CapstoneFinalProject.Models
 {
     public class Cart
     {
+        public string CartId { get; set; }
         private List<CartLine> lineCollection = new List<CartLine>();
 
         public virtual void AddItem(Menu menu, int quantity)

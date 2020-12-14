@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using CapstoneFinalProject.Data;
 using CapstoneFinalProject.Models;
 using Microsoft.AspNetCore.Authorization;
+using CapstoneFinalProject.Infrastructure;
 
 namespace CapstoneFinalProject.Controllers
 {
@@ -45,6 +46,48 @@ namespace CapstoneFinalProject.Controllers
 
             return View(menu);
         }
+
+        public IActionResult AddToCart(string id, string returnUrl)
+        {
+            Menu menu = _context.Menus.FirstOrDefault(m => m.MenuId == id);
+
+            if(menu != null)
+            {
+                Cart cart = GetCart();
+                cart.AddItem(menu, 1);
+                SaveCart(cart);
+            }
+
+            return View(new CartIndexViewModel { Cart = GetCart(), ReturnUrl = returnUrl });
+        }
+
+        public IActionResult RemoveFromCart(string id, string returnUrl)
+        {
+            Menu menu = _context.Menus.FirstOrDefault(m => m.MenuId == id);
+
+            if (menu != null)
+            {
+                Cart cart = GetCart();
+                cart.RemoveLine(menu);
+                SaveCart(cart);
+            }
+
+            return View("AddToCart", new CartIndexViewModel { Cart = GetCart(), ReturnUrl = returnUrl });
+        }
+
+        private Cart GetCart()
+        {
+            Cart cart = HttpContext.Session.GetJson<Cart>("Cart") ?? new Cart();
+            return cart;
+
+        }
+
+        private void SaveCart(Cart cart)
+        {
+            HttpContext.Session.SetJson("Cart", cart);
+
+        }
+
         [Authorize(Roles = "Admin")]
         // GET: Menus/Create
         public IActionResult Create()
