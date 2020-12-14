@@ -1,4 +1,6 @@
-﻿@{
+﻿@model RegisterViewModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,7 +8,7 @@
 <div class="jumbotron">
     <h1>LINCOLN'S FAVORITE PIZZA</h1>
     <p class="lead">We serve pizza in Lincoln, Nebraska. We can’t wait to feed you!</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">ORDER ONLINE &raquo;</a></p>
+    <p><a asp-controller="Menus" asp-action="Index" class="btn btn-primary btn-lg">ORDER ONLINE &raquo;</a></p>
 </div>
 <br />
 <div class="menu-titles">
@@ -19,7 +21,7 @@
             <img src="~/images/cheese.png" alt="Avatar" class="image" style="width:100%">
             <div class="middle-top-left">
                 <h3>CHEESE PIZZA</h3>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">ORDER ONLINE &raquo;</a></p>
+                <p><a asp-controller="Menus" asp-action="Index" class="btn btn-primary btn-lg">ORDER ONLINE &raquo;</a></p>
             </div>
         </div>
     </div>
@@ -28,7 +30,7 @@
             <img src="~/images/hamburger.png" alt="Avatar" class="image" style="width:100%">
             <div class="middle-top-right">
                 <h3>HAMBURGER PIZZA</h3>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">ORDER ONLINE &raquo;</a></p>
+                <p><a asp-controller="Menus" asp-action="Index" class="btn btn-primary btn-lg">ORDER ONLINE &raquo;</a></p>
             </div>
         </div>
     </div>
@@ -37,17 +39,17 @@
             <img src="~/images/pepperoni.png" alt="Avatar" class="image" style="width:100%">
             <div class="middle-btm-left">
                 <h3>PEPPERONI PIZZA</h3>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">ORDER ONLINE &raquo;</a></p>
+                <p><a asp-controller="Menus" asp-action="Index" class="btn btn-primary btn-lg">ORDER ONLINE &raquo;</a></p>
             </div>
         </div>
     </div>
-    
+
     <div class="col-md-4">
         <div class="menu-container">
             <img src="~/images/all-meat-special.png" alt="Avatar" class="image" style="width:100%">
             <div class="middle-btm-right">
                 <h3>ALL MEAT PIZZA</h3>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">ORDER ONLINE &raquo;</a></p>
+                <p><a asp-controller="Menus" asp-action="Index" class="btn btn-primary btn-lg">ORDER ONLINE &raquo;</a></p>
             </div>
         </div>
     </div>
@@ -56,7 +58,7 @@
             <img src="~/images/deluxe-pepperoni.png" alt="Avatar" class="image" style="width:100%">
             <div class="middle-btm-right">
                 <h3>DELUXE PEPPERONI PIZZA</h3>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">ORDER ONLINE &raquo;</a></p>
+                <p><a asp-controller="Menus" asp-action="Index" class="btn btn-primary btn-lg">ORDER ONLINE &raquo;</a></p>
             </div>
         </div>
     </div>
@@ -65,7 +67,7 @@
             <img src="~/images/bacon-cheeseburger.png" alt="Avatar" class="image" style="width:100%">
             <div class="middle-btm-right">
                 <h3>BACON CHEESEBURGER PIZZA</h3>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">ORDER ONLINE &raquo;</a></p>
+                <p><a asp-controller="Menus" asp-action="Index" class="btn btn-primary btn-lg">ORDER ONLINE &raquo;</a></p>
             </div>
         </div>
     </div>
@@ -79,7 +81,7 @@
             <img src="~/images/marinara-lasagne.png" alt="Avatar" class="image" style="width:100%">
             <div class="middle-top-left">
                 <h3>MARINARA LASAGNE</h3>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">ORDER ONLINE &raquo;</a></p>
+                <p><a asp-controller="Menus" asp-action="Index" class="btn btn-primary btn-lg">ORDER ONLINE &raquo;</a></p>
             </div>
         </div>
     </div>
@@ -88,7 +90,7 @@
             <img src="~/images/meat-sauce-lasagne.png" alt="Avatar" class="image" style="width:100%">
             <div class="middle-top-right">
                 <h3>MEAT LASAGNE</h3>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">ORDER ONLINE &raquo;</a></p>
+                <p><a asp-controller="Menus" asp-action="Index" class="btn btn-primary btn-lg">ORDER ONLINE &raquo;</a></p>
             </div>
         </div>
     </div>
@@ -97,7 +99,7 @@
             <img src="~/images/Spaghetti.png" alt="Avatar" class="image" style="width:100%">
             <div class="middle-btm-left">
                 <h3>SPAGHETTI</h3>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">ORDER ONLINE &raquo;</a></p>
+                <p><a asp-controller="Menus" asp-action="Index" class="btn btn-primary btn-lg">ORDER ONLINE &raquo;</a></p>
             </div>
         </div>
     </div>
@@ -111,7 +113,7 @@
             <img src="~/images/breadtwists.png" alt="Avatar" class="image" style="width:100%">
             <div class="middle-top-left">
                 <h3>BREADTWISTS</h3>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">ORDER ONLINE &raquo;</a></p>
+                <p><a asp-controller="Menus" asp-action="Index" class="btn btn-primary btn-lg">ORDER ONLINE &raquo;</a></p>
             </div>
         </div>
     </div>
@@ -120,7 +122,7 @@
             <img src="~/images/house-salad.png" alt="Avatar" class="image" style="width:100%">
             <div class="middle-top-right">
                 <h3>HOUSE SALAD</h3>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">ORDER ONLINE &raquo;</a></p>
+                <p><a asp-controller="Menus" asp-action="Index" class="btn btn-primary btn-lg">ORDER ONLINE &raquo;</a></p>
             </div>
         </div>
     </div>
@@ -129,24 +131,33 @@
             <img src="~/images/mixed-salad.png" alt="Avatar" class="image" style="width:100%">
             <div class="middle-btm-left">
                 <h3>MIXED SALAD</h3>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">ORDER ONLINE &raquo;</a></p>
+                <p><a asp-controller="Menus" asp-action="Index" class="btn btn-primary btn-lg">ORDER ONLINE &raquo;</a></p>
             </div>
         </div>
     </div>
 </div>
 <br />
+
 <div class="row">
     <div class="newsletter-img">
-        <form action="" class="newsletter-container">
-            <h3>Sign up for our newsletter</h3><br />
+        <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post" class="newsletter-container">
+            <h2>Sign up for our newsletter</h2><br />
 
-            <label for="email"><b>Email</b></label><br />
-            <input type="text" placeholder="Enter Email" name="email" required>
-            <br />
-            <label for="psw"><b>Password</b></label><br />
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" placeholder="Enter Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" placeholder="Enter Password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <br /><br />+-
+            <button type="submit" class="btn btn-default"><strong>SIGN UP NOW</strong></button>
 
-            <button type="submit" class="btn">SIGN UP NOW</button>
         </form>
+        
     </div>
 </div>
