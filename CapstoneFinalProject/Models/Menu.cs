@@ -16,6 +16,7 @@ namespace CapstoneFinalProject.Models
         public string Description { get; set; }
         public string MenuCategoryId { get; set; }
         public MenuCategory Category { get; set; }
-
+        public string MenuImageId { get; set; }
+        public MenuImage Image { get; set; }
     }
 }
