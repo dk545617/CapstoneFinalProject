@@ -64,7 +64,7 @@
                 {
                     <a asp-action="Delete" asp-route-id="@item.MenuId">Delete</a>
                 }
-
+                <br /><a asp-action="AddToCart" asp-route-id="@item.MenuId" asp-route-returnUrl="menus/index">Order</a>
             </td>
         </tr>
 }
