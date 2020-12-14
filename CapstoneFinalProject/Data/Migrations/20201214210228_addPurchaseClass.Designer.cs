@@ -11,9 +11,10 @@ using System;
 namespace CapstoneFinalProject.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201214210228_addPurchaseClass")]
+    partial class addPurchaseClass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -90,8 +91,6 @@ namespace CapstoneFinalProject.Data.Migrations
 
                     b.Property<string>("MenuItemMenuId");
 
-                    b.Property<int?>("OrderId");
-
                     b.Property<int>("Quantity");
 
                     b.HasKey("CartLineId");
@@ -99,8 +98,6 @@ namespace CapstoneFinalProject.Data.Migrations
                     b.HasIndex("CartId");
 
                     b.HasIndex("MenuItemMenuId");
-
-                    b.HasIndex("OrderId");
 
                     b.ToTable("CartLine");
                 });
@@ -154,37 +151,6 @@ namespace CapstoneFinalProject.Data.Migrations
                     b.HasKey("MenuImageId");
 
                     b.ToTable("MenuImages");
-                });
-
-            modelBuilder.Entity("CapstoneFinalProject.Models.Order", b =>
-                {
-                    b.Property<int>("OrderId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("City")
-                        .IsRequired();
-
-                    b.Property<string>("Country")
-                        .IsRequired();
-
-                    b.Property<string>("Line1")
-                        .IsRequired();
-
-                    b.Property<string>("Line2");
-
-                    b.Property<string>("Line3");
-
-                    b.Property<string>("Name")
-                        .IsRequired();
-
-                    b.Property<string>("State")
-                        .IsRequired();
-
-                    b.Property<string>("Zip");
-
-                    b.HasKey("OrderId");
-
-                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("CapstoneFinalProject.Models.Purchase", b =>
@@ -342,10 +308,6 @@ namespace CapstoneFinalProject.Data.Migrations
                     b.HasOne("CapstoneFinalProject.Models.Menu", "MenuItem")
                         .WithMany()
                         .HasForeignKey("MenuItemMenuId");
-
-                    b.HasOne("CapstoneFinalProject.Models.Order")
-                        .WithMany("Lines")
-                        .HasForeignKey("OrderId");
                 });
 
             modelBuilder.Entity("CapstoneFinalProject.Models.Menu", b =>
