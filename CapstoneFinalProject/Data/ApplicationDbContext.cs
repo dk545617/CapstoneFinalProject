@@ -18,7 +18,7 @@ namespace CapstoneFinalProject.Data
         public DbSet<Menu> Menus { get; set; }
         public DbSet<MenuCategory> MenuCategories { get; set; }
         public DbSet<MenuImage> MenuImages { get; set; }
-
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -30,5 +30,8 @@ namespace CapstoneFinalProject.Data
 
 
         public DbSet<CapstoneFinalProject.Models.Cart> Cart { get; set; }
+
+
+        public DbSet<CapstoneFinalProject.Models.User> User { get; set; }
     }
 }
