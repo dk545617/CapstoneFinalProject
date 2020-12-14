@@ -16,15 +16,18 @@
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Price)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Description)
-                </th>
+            <!--<th>
+        @Html.DisplayNameFor(model => model.Photo)
+    </th>-->
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Category)
             </th>
@@ -34,6 +37,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <!-- <td>
+        <img src="~/images/@item.Photo" width="60" />
+     </td>-->
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
@@ -51,14 +57,14 @@
                 {
                     <a asp-action="Edit" asp-route-id="@item.MenuId">Edit</a>
                 }
-                
+
                 <a asp-action="Details" asp-route-id="@item.MenuId">Details</a>
-                
+
                 @if (User.IsInRole("Admin"))
                 {
-                <a asp-action="Delete" asp-route-id="@item.MenuId">Delete</a>
+                    <a asp-action="Delete" asp-route-id="@item.MenuId">Delete</a>
                 }
-                
+
             </td>
         </tr>
 }
