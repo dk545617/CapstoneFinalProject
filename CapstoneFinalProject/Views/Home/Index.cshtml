@@ -140,24 +140,31 @@
 
 <div class="row">
     <div class="newsletter-img">
-        <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post" class="newsletter-container">
-            <h2>Sign up for our newsletter</h2><br />
+        @if (User.IsInRole("Admin"))
+        {
+        <br />
+        }
+        else 
+        {
+            <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post" class="newsletter-container">
+                <h2>Sign up for our newsletter</h2><br />
 
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Email"></label>
-                <input asp-for="Email" class="form-control" placeholder="Enter Email" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Password"></label>
-                <input asp-for="Password" class="form-control" placeholder="Enter Password" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-            <br /><br />
-            <button type="submit" class="btn btn-default"><strong>SIGN UP NOW</strong></button>
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" placeholder="Enter Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password"></label>
+                    <input asp-for="Password" class="form-control" placeholder="Enter Password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <br /><br />
+                <button type="submit" class="btn btn-default"><strong>SIGN UP NOW</strong></button>
 
-        </form>
-        
+            </form>
+        }
+
     </div>
 </div>

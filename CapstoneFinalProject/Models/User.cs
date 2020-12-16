@@ -19,7 +19,7 @@ namespace CapstoneFinalProject.Models
         [RegularExpression(@"^[\w\.\-]+@[\w\.\-]+\.[a-zA-Z]+$", ErrorMessage = "Email must be valid")]
         public string Email { get; set; }
         [Required(ErrorMessage = "You must enter your phone")]
-        [RegularExpression(@"^/d{3}-\d{3}-\d{4}$", ErrorMessage = "Phone must be in this format: 999-999-9999")]
+        
         public string Phone { get; set; }
         public string PhotoPath { get; set; }
     }
